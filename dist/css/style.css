@@ -22,7 +22,7 @@
 body {
   color: #000;
   background-color: #fff;
-  /* background-image: url("/img/yui.png"); */
+  background-image: url("/img/yui.png");
   background-size: 20vh 20vh;
   background-attachment: fixed;
   font-family: "Geist Sans", serif;
