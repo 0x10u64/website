@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "0x10u64",
+  "compatibility_date": "2026-09-11",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "website-d1",
+      "database_id": "d1c7e3d5-9901-4bf6-ae60-efdfb5b2b7e9"
+    }
+  ]
+}

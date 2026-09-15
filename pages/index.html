@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hiii</title>
+    <link href="https://unavatar.io/x/0x10u64" rel="icon" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+      href="https://www.nerdfonts.com/assets/css/webfont.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <img
+          src="/img/helloohii.png"
+          style="width: 100%; height: 8rem; object-fit: contain"
+        />
+      </section>
+      <section>
+        <p style="text-align: center">
+          Male, student, noob dev,
+          <a href="https://www.youtube.com/watch?v=j1yeSNMK08Y">IDM fan</a>
+        </p>
+        <div class="flex row" style="justify-content: center; gap: 1rem">
+          <a href="https://x.com/0x10u64">
+            <i class="nf nf-dev-twitter"></i> X
+          </a>
+          <a href="https://github.com/0x10u64">
+            <i class="nf nf-dev-github"></i> GitHub
+          </a>
+        </div>
+        <p style="text-align: center; color: #00000080">
+          (That's pretty much it)
+        </p>
+      </section>
+      <hr />
+      <section>
+        <div class="flex column" style="gap: 0.25rem">
+          <span>Recent Listened Tracks</span>
+          {tracks}
+        </div>
+      </section>
+      <hr />
+      <section>
+        <div class="flex column" style="gap: 0.25rem">
+          <span>Some bs I made</span>
+          <span>
+            1.
+            <a href="https://tiles.0x10u64.vercel.app">0x10u64/tiles</a>
+            - Anyone can place pictures on a 16x16 grid
+          </span>
+          <span>
+            2.
+            <a href="https://huemindvirus.0x10u64.vercel.app"
+              >0x10u64/huemindvirus</a
+            >
+            - Tint images with any color
+          </span>
+          <span>
+            3.
+            <a href="https://github.com/0x10u64/fragment-engine"
+              >fragment-engine</a
+            >
+            - ECS-based editor and runtime
+          </span>
+          <span style="color: #00000080">(More soon I think)</span>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <p>Send me stuff!</p>
+        <form id="messageForm">
+          <label for="author">Name (Optional)</label>
+          <br />
+          <input name="author" type="text" placeholder="Anonymous" />
+          <br />
+          <label for="content">Message</label>
+          <br />
+          <textarea
+            name="content"
+            style="min-width: 16rem; min-height: 4rem"
+            required
+          ></textarea>
+          <br />
+          <input id="messageFileCheck" name="includeFile" type="checkbox" />
+          <label for="includeFile">Attach a picture</label>
+          <br />
+          <span id="messageFileSpan" class="hidden">
+            <label for="file">Picture</label>
+            <input name="file" type="file" accept="image/*" />
+            <br />
+          </span>
+          <input type="submit" value="Send!" />
+        </form>
+        <p id="messageFormStatus"></p>
+      </section>
+      <hr />
+      <section>
+        <p style="text-align: center">Bye bye!!</p>
+      </section>
+    </main>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

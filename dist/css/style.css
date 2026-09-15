@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/GeistSans.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 20vh 20vh;
+  }
+}
+
+body {
+  color: #000;
+  background-color: #fff;
+  /* background-image: url("/img/yui.png"); */
+  background-size: 20vh 20vh;
+  background-attachment: fixed;
+  font-family: "Geist Sans", serif;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: background-animation 1s linear infinite;
+}
+
+body.messages {
+  background-image: none;
+}
+
+main {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.flex.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.column {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex: 1;
+}
+
+a {
+  position: relative;
+  color: #000;
+  text-decoration-color: #00000080;
+  text-decoration-thickness: 2px;
+  transition: 250ms ease;
+}
+
+a:hover {
+  text-decoration-color: #000;
+}
+
+hr {
+  border: none;
+  background: #000;
+  width: 100%;
+  height: 2px;
+}
+
+input,
+textarea {
+  padding: 4px;
+}
+
+span.hidden {
+  display: none;
+}
