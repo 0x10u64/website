@@ -139,14 +139,9 @@ export async function messages(request, env) {
     });
   } catch (err) {
     return new Response(
-      JSON.stringify(
-        {
-          error: err instanceof Error ? err.message : String(err),
-          stack: err instanceof Error ? err.stack : undefined,
-        },
-        null,
-        2,
-      ),
+      JSON.stringify({
+        error: err.message,
+      }),
       {
         status: 500,
         headers: {

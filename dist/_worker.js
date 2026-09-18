@@ -2,6 +2,7 @@ import index from "../pages/index.html";
 import mailbox from "../pages/mailbox.html";
 
 import { messages } from "../src/messages";
+import { meow } from "../src/meow";
 
 export default {
   async fetch(request, env) {
@@ -18,6 +19,8 @@ export default {
         break;
       case "/functions/messages":
         return messages(request, env);
+      case "/functions/meow":
+        return meow(request, env);
     }
 
     if (content) {
@@ -30,11 +33,11 @@ export default {
         limit: String(limit),
       });
 
-      const response = await fetch(
+      const lastfmResponse = await fetch(
         `https://ws.audioscrobbler.com/2.0/?${params}`,
       );
 
-      const tracks = await response.json();
+      const tracks = await lastfmResponse.json();
       const tracksHtml = tracks.recenttracks.track
         .slice(0, limit)
         .map(
@@ -44,6 +47,24 @@ export default {
         .join("");
 
       content = content.replace("{tracks}", tracksHtml);
+
+      let meows;
+
+      try {
+        const result = await env.DB.prepare(
+          `
+            SELECT value
+            FROM kv_store
+            WHERE key = 'meows'
+          `,
+        ).first();
+
+        meows = result.value;
+      } catch (err) {
+        meows = "Unsure, try reloading";
+      } finally {
+        content = content.replace("{meows}", meows);
+      }
 
       return new Response(content, {
         headers: { "content-type": "text/html; charset=utf-8" },

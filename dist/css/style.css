@@ -81,7 +81,8 @@ hr {
 }
 
 input,
-textarea {
+textarea,
+button {
   padding: 4px;
 }
 
