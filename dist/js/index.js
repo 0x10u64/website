@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     meows: document.getElementById("meows"),
     meowButton: document.getElementById("meowButton"),
     meowMessage: document.getElementById("meowMessage"),
+    localTime: document.getElementById("localTime"),
   };
 
   document
@@ -67,4 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
       els.meowMessage.textContent = `Error: ${err.message}`;
     }
   });
+
+  const localTimeTimer = () => {
+    const localTime = new Intl.DateTimeFormat("en-US", {
+      timeZone: "+05:00",
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    const localTimeString = localTime.format(new Date());
+
+    if (els.localTime.textContent != localTimeString) {
+      els.localTime.textContent = localTimeString;
+    }
+
+    setTimeout(localTimeTimer, 100);
+  };
+
+  localTimeTimer();
 });
