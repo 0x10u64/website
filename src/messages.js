@@ -22,13 +22,6 @@ export async function messages(request, env) {
   if (request.method === "GET") {
     const providedPassword = url.searchParams.get("password");
 
-    if (!env.ADMIN_PASSWORD) {
-      return new Response(
-        JSON.stringify({ error: "Server misconfigured: no password set" }),
-        { status: 500, headers: { "Content-Type": "application/json" } },
-      );
-    }
-
     if (providedPassword !== env.ADMIN_PASSWORD) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
@@ -57,7 +50,7 @@ export async function messages(request, env) {
             });
 
             file_url = await getSignedUrl(s3, command, {
-              expiresIn: 60,
+              expiresIn: 600,
             });
           }
 
