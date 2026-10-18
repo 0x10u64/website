@@ -97,13 +97,15 @@
             required
           ></textarea>
           <br />
-          <input id="messageFileCheck" name="includeFile" type="checkbox" />
-          <label for="includeFile">Attach a picture</label>
-          <br />
-          <span id="messageFileSpan" class="hidden">
-            <label for="file">Picture</label>
-            <input name="file" type="file" accept="image/*" />
+          <span>
+            <input id="messageFileCheck" name="includeFile" type="checkbox" />
+            <label for="includeFile">Attach a picture</label>
             <br />
+            <span id="messageFileSpan" class="hidden">
+              <label for="file">Picture</label>
+              <input name="file" type="file" accept="image/*" />
+              <br />
+            </span>
           </span>
           <input type="submit" value="Send!" />
         </form>
