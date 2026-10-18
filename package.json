@@ -5,5 +5,9 @@
     "@aws-sdk/s3-request-presigner": "^3.1132.0",
     "@xmldom/xmldom": "^0.9.12",
     "wrangler": "^4.131.2"
+  },
+  "scripts": {
+    "dev": "npx wrangler pages dev",
+    "deploy": "npx wrangler pages deploy"
   }
 }
