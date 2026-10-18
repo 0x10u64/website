@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Geist Sans";
-  src: url("/fonts/GeistSans.woff2") format("woff2");
+  font-family: "SF Pro";
+  src: url("/fonts/SF-Pro-Text-Regular.otf") format("opentype");
 }
 
 * {
@@ -25,7 +25,7 @@ body {
   background-image: url("/img/yui.png");
   background-size: 20vh 20vh;
   background-attachment: fixed;
-  font-family: "Geist Sans", serif;
+  font-family: "SF Pro", serif;
   font-size: 1rem;
   min-height: 100vh;
   display: flex;
@@ -44,7 +44,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 1rem;
+  padding: 8px;
 }
 
 .flex.row {
@@ -58,7 +58,15 @@ main {
 }
 
 section {
-  flex: 1;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #808080;
+  border-radius: 1rem;
+}
+
+section.no-bg {
+  background: none;
+  border: none;
 }
 
 a {
@@ -84,6 +92,20 @@ input,
 textarea,
 button {
   padding: 4px;
+  font-family: "SF Pro", serif;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 2px;
 }
 
 span.hidden {

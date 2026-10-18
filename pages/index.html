@@ -13,10 +13,10 @@
   </head>
   <body>
     <main>
-      <section>
+      <section class="no-bg">
         <img
           src="/img/helloohii.png"
-          style="width: 100%; height: 8rem; object-fit: contain"
+          style="width: 100%; height: 16rem; object-fit: contain"
         />
       </section>
       <section>
@@ -36,21 +36,20 @@
           (That's pretty much it)
         </p>
       </section>
-      <hr />
       <section>
         <div style="text-align: center">
           <span>My time right now is...</span>
-          <h1 id="localTime" style="font-family: monospace">12:00 AM</h1>
+          <h1 id="localTime" style="font-variant-numeric: tabular-nums">
+            12:00 AM
+          </h1>
         </div>
       </section>
-      <hr />
       <section>
         <div class="flex column" style="gap: 0.25rem">
           <span>Recent Listened Tracks</span>
           {tracks}
         </div>
       </section>
-      <hr />
       <span style="display: none">
         <section>
           <div class="flex column" style="gap: 0.25rem">
@@ -77,18 +76,16 @@
             <span style="color: #00000080">(More soon I think)</span>
           </div>
         </section>
-        <hr />
       </span>
       <section>
         <p id="meows">Meows: {meows}</p>
         <button id="meowButton">I meow this</button>
         <span id="meowMessage"></span>
       </section>
-      <hr />
       <section>
-        <p>Send me stuff!</p>
+        <p>Send me stuff!!!</p>
         <form id="messageForm">
-          <label for="author">Name (Optional)</label>
+          <label for="author">Your name (Optional)</label>
           <br />
           <input name="author" type="text" placeholder="Anonymous" />
           <br />
@@ -112,7 +109,6 @@
         </form>
         <p id="messageFormStatus"></p>
       </section>
-      <hr />
       <section>
         <p style="text-align: center">Bye bye!!</p>
       </section>

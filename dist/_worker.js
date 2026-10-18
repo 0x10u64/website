@@ -61,7 +61,7 @@ export default {
 
         meows = result.value;
       } catch (err) {
-        meows = "Unsure, try reloading";
+        meows = "Unsure, try reloading the page";
       } finally {
         content = content.replace("{meows}", meows);
       }
